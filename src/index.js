@@ -4,15 +4,13 @@ dotenv.config({
     path: "./.env"
 });
 
+import {app} from "./app.js";
 import mongoose, { connect } from "mongoose";
 import {DB_NAME} from "./constants.js";
 import connectDB from "./db/index.js";
 
 
 /*
-import express from "express"; 
-const app = express();
-
 (async ()=>{
     try{
         await mongoose.connect(`${process.env.MONGO_URI}/${DB_NAME}`)

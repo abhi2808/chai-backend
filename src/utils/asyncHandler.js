@@ -1,11 +1,11 @@
-const asynHandler=(requestHandler)=>{
-    (req,res,next)=>{
+const asyncHandler=(requestHandler)=>{
+    return (req,res,next)=>{
         Promise.resolve(requestHandler(req,res,next)).
         catch((err)=>next(err))
     }
 }
 
-export {asynHandler}
+export {asyncHandler}
 
 /*
 const asyncHandler=(fn)=>{ //wrapper function, higher order function that takes a function as an argument and returns a new function that returns a promise
